@@ -75,6 +75,12 @@
   50% { transform: translateY(-15px); }
 }
 
+@keyframes floatPhoto {
+  0%, 100% { transform: translateY(0px); }
+  33% { transform: translateY(-10px) translateX(3px); }
+  66% { transform: translateY(5px) translateX(-3px); }
+}
+
 @keyframes pulse-glow {
   0%, 100% { filter: drop-shadow(0 0 8px hsl(340 80% 55% / 0.6)); }
   50% { filter: drop-shadow(0 0 25px hsl(340 80% 55% / 0.9)); }
