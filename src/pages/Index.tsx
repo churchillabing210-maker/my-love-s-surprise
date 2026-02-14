@@ -14,7 +14,7 @@ const Index = () => {
           className="font-display text-foreground text-6xl sm:text-8xl md:text-9xl opacity-90 select-none animate-fade-in-up"
           style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.2)" }}
         >
-          Hii Princess!!
+        Hi Loves!!
         </h1>
 
         {/* Subtitle with flower link */}
@@ -44,8 +44,8 @@ const Index = () => {
           className="absolute bottom-6 left-1/2 -translate-x-1/2 font-body text-foreground/40 text-[10px] sm:text-xs text-center max-w-[60vw] select-none"
           style={{ animation: "fadeInUp 1s 1s ease-out both" }}
         >
-          "Click the flower, bebe. I have something for you 💗"
-          <br />— rifan &lt;3
+          "Click the flower, Mahal. I have something for ya 💗"
+          <br />— CHURCHILL &lt;3
         </p>
       </div>
     </div>
