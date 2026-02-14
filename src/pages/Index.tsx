@@ -14,7 +14,7 @@ const Index = () => {
           className="font-display text-foreground text-6xl sm:text-8xl md:text-9xl opacity-90 select-none animate-fade-in-up"
           style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.2)" }}
         >
-        Hi cii
+        Hi Mahal!!
         </h1>
 
         {/* Subtitle with flower link */}
