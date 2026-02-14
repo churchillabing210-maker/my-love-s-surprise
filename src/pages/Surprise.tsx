@@ -50,7 +50,7 @@ const Surprise = () => {
             
             <h1 className="font-display text-foreground text-4xl sm:text-6xl mb-6 opacity-90"
               style={{ textShadow: "2px 2px 8px rgba(200, 0, 100, 0.3)" }}>
-              Happy Valentine's Day, Cii AKA Negang Bebw
+              Happy Valentine's Day, Cii AKA Negang Bebe
             </h1>
 
             <div className="font-body text-foreground/80 text-sm sm:text-base leading-relaxed space-y-4 mb-8 px-2 text-left">
