@@ -9,7 +9,14 @@ import cia4 from "@/assets/cia-4.jpeg";
 import cia5 from "@/assets/cia-5.jpeg";
 import cia6 from "@/assets/cia-6.png";
 
-const photos = [cia1, cia2, cia3, cia4, cia5, cia6];
+const floatingPhotos = [
+  { src: cia1, top: "5%", left: "2%", rotate: "-12deg", delay: "0.3s", size: "clamp(90px, 14vw, 150px)" },
+  { src: cia2, top: "8%", right: "3%", rotate: "8deg", delay: "0.6s", size: "clamp(80px, 12vw, 130px)" },
+  { src: cia3, top: "35%", left: "-1%", rotate: "6deg", delay: "0.9s", size: "clamp(85px, 13vw, 140px)" },
+  { src: cia4, top: "38%", right: "1%", rotate: "-10deg", delay: "1.2s", size: "clamp(80px, 12vw, 130px)" },
+  { src: cia5, top: "62%", left: "1%", rotate: "-5deg", delay: "1.5s", size: "clamp(85px, 13vw, 135px)" },
+  { src: cia6, top: "60%", right: "2%", rotate: "12deg", delay: "1.8s", size: "clamp(90px, 14vw, 145px)" },
+];
 
 const Surprise = () => {
   const [showMessage, setShowMessage] = useState(false);
@@ -37,6 +44,38 @@ const Surprise = () => {
         }}
       />
 
+      {/* Floating photos scattered around the page */}
+      {showMessage && floatingPhotos.map((photo, i) => (
+        <div
+          key={i}
+          className="fixed z-10 pointer-events-none"
+          style={{
+            top: photo.top,
+            left: photo.left,
+            right: photo.right,
+            animation: `floatPhoto 6s ${parseFloat(photo.delay) + 1}s ease-in-out infinite, fadeInUp 1s ${photo.delay} ease-out both`,
+          }}
+        >
+          <div
+            className="rounded-lg overflow-hidden shadow-2xl"
+            style={{
+              width: photo.size,
+              height: photo.size,
+              transform: `rotate(${photo.rotate})`,
+              border: "3px solid hsl(0 0% 100% / 0.15)",
+              boxShadow: "0 8px 30px hsl(340 80% 40% / 0.25), 0 0 60px hsl(270 60% 30% / 0.15)",
+            }}
+          >
+            <img
+              src={photo.src}
+              alt={`Cia ${i + 1}`}
+              className="w-full h-full object-cover"
+              style={{ filter: "brightness(0.85) contrast(1.05)" }}
+            />
+          </div>
+        </div>
+      ))}
+
       {/* Flowers at the bottom */}
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 flex items-end justify-center" style={{ perspective: "1000px" }}>
         <CSSFlowers />
@@ -45,7 +84,7 @@ const Surprise = () => {
       {/* Message overlay */}
       <div className="relative z-20 flex flex-col items-center justify-start pt-8 sm:pt-12 pb-40 h-full px-4 overflow-y-auto">
         {showMessage && (
-          <div className="text-center max-w-lg" style={{ animation: "fadeInUp 1.5s ease-out" }}>
+          <div className="text-center max-w-md" style={{ animation: "fadeInUp 1.5s ease-out" }}>
             <Heart className="w-8 h-8 mx-auto mb-4 text-primary animate-heartbeat" fill="currentColor" />
             
             <h1 className="font-display text-foreground text-4xl sm:text-6xl mb-6 opacity-90"
@@ -65,33 +104,9 @@ const Surprise = () => {
             </div>
 
             {/* Music Player */}
-             <div style={{ animation: "fadeInUp 1s 0.3s ease-out both" }} className="mb-12">
-               <MusicPlayer />
-             </div>
-
-            {/* Photo Gallery */}
-             <div style={{ animation: "fadeInUp 1s 0.45s ease-out both" }}>
-               <p className="text-foreground/60 text-xs mb-4 font-body tracking-widest uppercase">✨ My Beautiful Cii ✨</p>
-               <div className="grid grid-cols-2 gap-3 mb-8">
-                 {photos.map((photo, i) => (
-                   <div
-                     key={i}
-                     className="rounded-xl overflow-hidden aspect-square shadow-lg"
-                     style={{
-                       animation: `fadeInUp 0.6s ${0.65 + i * 0.15}s ease-out both`,
-                       border: "2px solid hsl(340 60% 30% / 0.4)",
-                       boxShadow: "0 4px 20px hsl(340 80% 40% / 0.2)",
-                     }}
-                   >
-                     <img
-                       src={photo}
-                       alt={`Cia photo ${i + 1}`}
-                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                     />
-                   </div>
-                 ))}
-               </div>
-             </div>
+            <div style={{ animation: "fadeInUp 1s 0.3s ease-out both" }}>
+              <MusicPlayer />
+            </div>
           </div>
         )}
       </div>
