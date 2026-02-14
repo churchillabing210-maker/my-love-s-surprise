@@ -64,35 +64,34 @@ const Surprise = () => {
               <p className="text-foreground/50 text-xs italic mt-6 text-center">— Churchill</p>
             </div>
 
-            {/* Photo Gallery */}
-            <div style={{ animation: "fadeInUp 1s 0.3s ease-out both" }}>
-              <p className="text-foreground/60 text-xs mb-4 font-body tracking-widest uppercase">✨ My Beautiful Cii ✨</p>
-              <div className="grid grid-cols-2 gap-3 mb-8">
-                {photos.map((photo, i) => (
-                  <div
-                    key={i}
-                    className="rounded-xl overflow-hidden aspect-square shadow-lg"
-                    style={{
-                      animation: `fadeInUp 0.6s ${0.5 + i * 0.15}s ease-out both`,
-                      border: "2px solid hsl(340 60% 30% / 0.4)",
-                      boxShadow: "0 4px 20px hsl(340 80% 40% / 0.2)",
-                    }}
-                  >
-                    <img
-                      src={photo}
-                      alt={`Cia photo ${i + 1}`}
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Music Player */}
-            <div style={{ animation: "fadeInUp 1s 0.5s ease-out both" }}>
-              <p className="text-foreground/50 text-xs mb-3 font-body">our song 🎵</p>
-              <MusicPlayer />
-            </div>
+             <div style={{ animation: "fadeInUp 1s 0.3s ease-out both" }} className="mb-12">
+               <MusicPlayer />
+             </div>
+
+            {/* Photo Gallery */}
+             <div style={{ animation: "fadeInUp 1s 0.45s ease-out both" }}>
+               <p className="text-foreground/60 text-xs mb-4 font-body tracking-widest uppercase">✨ My Beautiful Cii ✨</p>
+               <div className="grid grid-cols-2 gap-3 mb-8">
+                 {photos.map((photo, i) => (
+                   <div
+                     key={i}
+                     className="rounded-xl overflow-hidden aspect-square shadow-lg"
+                     style={{
+                       animation: `fadeInUp 0.6s ${0.65 + i * 0.15}s ease-out both`,
+                       border: "2px solid hsl(340 60% 30% / 0.4)",
+                       boxShadow: "0 4px 20px hsl(340 80% 40% / 0.2)",
+                     }}
+                   >
+                     <img
+                       src={photo}
+                       alt={`Cia photo ${i + 1}`}
+                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                     />
+                   </div>
+                 ))}
+               </div>
+             </div>
           </div>
         )}
       </div>
